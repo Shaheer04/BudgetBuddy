@@ -147,6 +147,8 @@ def ask(query: str,
 
     return output_text, context_items
 
-login(token=HF_TOKEN, add_to_git_credential=True)
-answer = ask("I am a retired individual and I just have my pension as my source of income. How would this budget impact me?")
-print (answer)
+def main(query:str):
+
+    login(token=HF_TOKEN, add_to_git_credential=True)
+    answer = ask(query=query)
+    return answer
