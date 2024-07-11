@@ -90,11 +90,10 @@ Answer: The Bill proposes the following amendments
             Sales tax at the rate of 10% is proposed on the local supply of poultry feed, cattle feed, sunflower seed meal, rape seed meal, and canola seed meal by placing these items in the Eighth Schedule of the Act, with the condition that refund of excess input tax, if any, shall not be admissible.
 \nNow use the following context items to answer the user query:
 {context}
-\nRelevant passages: <extract relevant passages from the context here>
-User query:
+User query: {query}
 Answer:"""
     
-    base_prompt = base_prompt.format(context=context)
+    base_prompt = base_prompt.format(context=context,query=query)
     
     return base_prompt
 
@@ -130,7 +129,7 @@ def ask(query: str,
     temperature=temprature
     )
     
-
+    # Extract the answer from the response
     for message in response['choices']:
         output = message['message']['content']
     output_text = ''.join(output)
