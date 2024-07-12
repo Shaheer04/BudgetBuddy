@@ -10,7 +10,7 @@ import streamlit as st
 
 # Load the environment variables
 load_dotenv(find_dotenv())
-HF_TOKEN = os.getenv("hf_key") or st.secrets("HF_KEY")
+HF_TOKEN = os.getenv("hf_key") or st.secrets["HF_KEY"]
 
 model = InferenceClient(
     "meta-llama/Meta-Llama-3-8B-Instruct",
