@@ -17,7 +17,7 @@ def response_generator(text: str):
             yield "\n\n"  # Add paragraph breaks
 
 st.title("BudgetBuddy")
-st.info("I am your Budget Buddy, Ask me anything about the latest budget and finance of Pakistan.")
+st.info("I am your Budget Buddy, Ask me anything about the latest 2024 budget and finance of Pakistan.")
 st.caption("Use buttons to ask question or type in the chat box.")
 
 def conversation(query:str):
