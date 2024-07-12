@@ -34,6 +34,17 @@ def conversation(query:str):
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
 
+# Define buttons for common questions
+if st.button("What is the property transfer tax in this budget?", use_container_width=True, type="primary"):
+    question = "What is the property transfer tax in this budget?"
+
+if st.button(" What changes have been made to the income tax slabs and rates for individuals?",  use_container_width=True, type="primary"):
+    question = "What changes have been made to the income tax slabs and rates for individuals?"
+
+if st.button("what is electronic invoicing system according to this budget?",  use_container_width=True, type="primary"):
+    question = "what is electronic invoicing system according to this budget?"
+
+
 with st.container(border=True):
     # Initialize chat history
     if "messages" not in st.session_state:
@@ -44,28 +55,20 @@ with st.container(border=True):
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
+    if 'question' in locals():
+        match question:
+            case "What is the property transfer tax in this budget?":
+                conversation(query=question)
+            case "What changes have been made to the income tax slabs and rates for individuals?":
+                conversation(query=question)
+            case "what is electronic invoicing system according to this budget?":
+                conversation(query=question)
+            case _:
+                pass
+
     if query := st.chat_input("Enter a message..."):
         conversation(query=query)
 
-if st.button("What is the property transfer tax in this budget?", use_container_width=True, type="primary"):
-    question = "What is the property transfer tax in this budget?"
-
-if st.button(" What changes have been made to the income tax slabs and rates for individuals?",  use_container_width=True, type="primary"):
-    question = "What changes have been made to the income tax slabs and rates for individuals?"
-
-if st.button("what is electronic invoicing system according to this budget?",  use_container_width=True, type="primary"):
-    question = "what is electronic invoicing system according to this budget?"
-
-if 'question' in locals():
-    match question:
-        case "What is the property transfer tax in this budget?":
-            conversation(query=question)
-        case "What changes have been made to the income tax slabs and rates for individuals?":
-            conversation(query=question)
-        case "what is electronic invoicing system according to this budget?":
-            conversation(query=question)
-        case _:
-            pass
-
 st.caption("Made with ❤️ by Shaheer Jamal")
+st.caption("For more information visit [GitHub](https://github.com/Shaheer04/BudgetBuddy)")
 
