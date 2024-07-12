@@ -20,7 +20,9 @@ This web application leverages Retrieval-Augmented Generation (RAG) using the Me
 
 **Embedding model** : [All-Mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)
 
-**LLM API** : [Meta-LLaMA-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) 
+**LLM API** : [Meta-LLaMA-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+
+**Data For RAG** : Used Budget data from **FBR** website.
 
 **Frontend** : Streamlit
 
